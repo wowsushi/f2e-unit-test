@@ -19,7 +19,10 @@ Output: 5
  */
 const lengthOfLastWord = function(s) {
   if (s.length === 0) return 0;
-  let result = s.trim().length;
+  let result = s
+    .trim()
+    .split(" ")
+    .slice(-1)[0].length;
   return result;
 };
 export default lengthOfLastWord;
