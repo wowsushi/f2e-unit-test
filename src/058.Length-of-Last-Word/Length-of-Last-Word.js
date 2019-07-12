@@ -17,5 +17,7 @@ Output: 5
  * @param {string} s
  * @return {number}
  */
-const lengthOfLastWord = function(s) {};
+const lengthOfLastWord = function(s) {
+  return s.length;
+};
 export default lengthOfLastWord;
