@@ -18,6 +18,8 @@ Output: 5
  * @return {number}
  */
 const lengthOfLastWord = function(s) {
-  return s.length;
+  if (s.length === 0) return 0;
+  let result = s.trim().length;
+  return result;
 };
 export default lengthOfLastWord;
