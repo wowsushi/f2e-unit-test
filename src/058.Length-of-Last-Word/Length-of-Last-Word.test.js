@@ -23,21 +23,21 @@ describe("Length of Last Word", () => {
 
   test("s is 'ab' should return 2", () => {
     const s = "ab";
-    expect(lengthOfLastWord(s)).toEqual(0);
+    expect(lengthOfLastWord(s)).toEqual(2);
   });
 
   test("s is '  abc    ' should return 3", () => {
     const s = "  abc    ";
-    expect(lengthOfLastWord(s)).toEqual(0);
+    expect(lengthOfLastWord(s)).toEqual(3);
   });
 
   test("s is 'abc xy' should return 2", () => {
     const s = "abc xy";
-    expect(lengthOfLastWord(s)).toEqual(0);
+    expect(lengthOfLastWord(s)).toEqual(2);
   });
 
   test("s is 'a a a a a  a abcd' should return 4", () => {
     const s = "a a a a a  a abcd";
-    expect(lengthOfLastWord(s)).toEqual(0);
+    expect(lengthOfLastWord(s)).toEqual(4);
   });
 });
