@@ -8,6 +8,10 @@ const myAtoi = function(str) {
     let power = 0
     
     for (let i = str.length - 1; i >= 0; i--) {
+        console.log(i, value, power)
+        // 如果空格，跳過解析
+        if (str[i] === " ") continue 
+
         //如果不是正負數也不是數字
         if (isNaN(parseInt(str[i], 10)) && str[i] !== "-" && str[i] !== "+") {
 
@@ -15,15 +19,13 @@ const myAtoi = function(str) {
             if (value === 0) {
                 continue
             
-            // 如果已經開始計算，直接中斷計算
+            // 如果已經開始計算，重新開始計算
             } else if (value > 0) {
-                return 0
+                value = 0
+                power = 0
             }
         }
-
-        // 如果空格，跳過解析
-        if (str[i] === " ") continue 
-        
+      
         // 如果是負號，先存起來
         if (str[i] === "-") {
             plusMinusSign = str[i]
@@ -36,6 +38,9 @@ const myAtoi = function(str) {
         }
 
     }
+
+    if (value > 2 ** 31 - 1) value = 2 ** 31
+    
     
     return plusMinusSign === "-" ? value * -1 : value
 };
