@@ -8,9 +8,19 @@ const myAtoi = function(str) {
     let power = 0
     
     for (let i = str.length - 1; i >= 0; i--) {
-        //如果不是正負數也不是數字，跳過解析
-        if (isNaN(parseInt(str[i], 10)) && str[i] !== "-" && str[i] !== "+") continue
-        
+        //如果不是正負數也不是數字
+        if (isNaN(parseInt(str[i], 10)) && str[i] !== "-" && str[i] !== "+") {
+
+            //如果還沒開始計算 value，跳過，解析下一個
+            if (value === 0) {
+                continue
+            
+            // 如果已經開始計算，直接中斷計算
+            } else if (value > 0) {
+                return 0
+            }
+        }
+
         // 如果空格，跳過解析
         if (str[i] === " ") continue 
         
